@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+DirectoryIndex index.php
+RewriteEngine On
+
+#IMPORTANT: Change this URL to yours!
+RewriteBase /occupy/
+
+# DomainController handles ALL requests
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
